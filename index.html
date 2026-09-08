@@ -105,6 +105,7 @@
           canvasEl.width = size;
           canvasEl.height = size;
           const ctx = canvasEl.getContext('2d');
+          if (!ctx) return new THREE.Texture();
           const gradient = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
           gradient.addColorStop(0, hexColor);
           gradient.addColorStop(0.4, hexColor);
