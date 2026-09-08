@@ -250,10 +250,7 @@
           });
 
           pulses.forEach((pulse) => {
-            pulse.progress += pulse.speed * 0.01;
-            if (pulse.progress > 1) pulse.progress = 0;
-            pulse.sprite.position.lerpVectors(new THREE.Vector3(0, 0, 0), pulse.node.position, pulse.progress);
-            pulse.sprite.material.opacity = 0.9 * (1 - Math.abs(pulse.progress - 0.5) * 1.2);
+            pulse.sprite.position.copy(pulse.node.position).multiplyScalar(pulse.progress);
           });
 
           stars.rotation.y += 0.00015;
