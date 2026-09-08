@@ -222,8 +222,7 @@
           animationFrame = requestAnimationFrame(animate);
           const elapsed = clock.getElapsedTime();
 
-          const targetScroll = Math.min(scrollY / (window.innerHeight || 1), 1.4);
-          smoothedScroll += (targetScroll - smoothedScroll) * 0.06;
+          const targetScroll = Math.min(window.scrollY / (window.innerHeight || 1), 1.4);
 
           core.rotation.y += 0.0025;
           core.rotation.x += 0.0012;
