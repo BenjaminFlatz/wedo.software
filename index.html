@@ -73,13 +73,6 @@
      */
     const NetworkHero = () => {
       const canvasRef = useRef(null);
-      const [scrollY, setScrollY] = useState(0);
-
-      useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
 
       useEffect(() => {
         if (!canvasRef.current || typeof THREE === 'undefined') {
