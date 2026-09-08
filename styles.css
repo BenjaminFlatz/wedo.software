@@ -1,7 +1,28 @@
 /* Reset and Base Styles */
+:root {
+  --bg-void: #05060a;
+  --bg-obsidian: #0a0c12;
+  --bg-panel: #10131c;
+  --accent-cyan: #22d3ee;
+  --accent-blue: #3b82f6;
+  --accent-glow: rgba(34, 211, 238, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  background: var(--bg-void);
+  color: #e5e7eb;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Link Styles */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Animations */
@@ -21,6 +42,11 @@ body {
   }
 }
 
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
 .animate-fade-in {
   animation: fadeIn 1s ease-in;
 }
@@ -29,22 +55,57 @@ body {
   animation: slideUp 0.5s ease-out;
 }
 
-/* Custom Utilities */
-.gradient-hero {
-  background: linear-gradient(to bottom right, #1d4ed8, #4f46e5, #7c3aed);
+/* Glassmorphic surfaces */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-.shadow-custom {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.glass-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-/* Link Styles */
-a {
-  text-decoration: none;
-  color: inherit;
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 20px 45px -15px rgba(34, 211, 238, 0.35);
 }
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
+.glow-text {
+  text-shadow: 0 0 25px rgba(34, 211, 238, 0.55);
+}
+
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.4), 0 0 25px rgba(34, 211, 238, 0.35);
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  box-shadow: 0 10px 30px -8px rgba(59, 130, 246, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 38px -8px rgba(34, 211, 238, 0.75);
+}
+
+.badge-chip {
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  color: #a5f3fc;
+}
+
+.section-glow {
+  background: radial-gradient(60% 60% at 50% 0%, rgba(34, 211, 238, 0.08), transparent 70%);
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.35);
 }

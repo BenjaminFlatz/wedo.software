@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="wedo-software.com logo">
+  <defs>
+    <clipPath id="wedoCircleClip">
+      <circle cx="100" cy="100" r="86" />
+    </clipPath>
+    <linearGradient id="wedoWaveFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0e7490" />
+    </linearGradient>
+    <linearGradient id="wedoWaveBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <radialGradient id="wedoSun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#facc15" />
+      <stop offset="65%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#050608" stroke-width="14" />
+
+  <g clip-path="url(#wedoCircleClip)">
+    <rect x="14" y="14" width="172" height="172" fill="#ffffff" />
+    <circle cx="126" cy="92" r="34" fill="url(#wedoSun)" />
+    <path d="M 14 145 C 55 90, 80 90, 95 130 C 112 175, 150 40, 186 55 L 186 186 L 14 186 Z" fill="url(#wedoWaveBack)" />
+    <path d="M 14 165 C 60 115, 90 130, 105 155 C 125 190, 155 90, 186 100 L 186 186 L 14 186 Z" fill="url(#wedoWaveFront)" />
+  </g>
+</svg>
