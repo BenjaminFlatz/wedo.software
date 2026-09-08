@@ -98,7 +98,6 @@
           canvasEl.width = size;
           canvasEl.height = size;
           const ctx = canvasEl.getContext('2d');
-          if (!ctx) return new THREE.Texture();
           const gradient = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
           gradient.addColorStop(0, hexColor);
           gradient.addColorStop(0.4, hexColor);
@@ -246,7 +245,7 @@
           pulses.forEach((pulse) => {
             pulse.progress += pulse.speed * 0.01;
             if (pulse.progress > 1) pulse.progress = 0;
-            pulse.sprite.position.copy(pulse.node.position).multiplyScalar(pulse.progress);
+            pulse.sprite.position.lerpVectors(new THREE.Vector3(0, 0, 0), pulse.node.position, pulse.progress);
             pulse.sprite.material.opacity = 0.9 * (1 - Math.abs(pulse.progress - 0.5) * 1.2);
           });
 
