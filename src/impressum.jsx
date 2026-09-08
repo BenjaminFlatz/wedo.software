@@ -1,0 +1,127 @@
+    const Navbar = () => (
+      <nav className="glass-panel fixed w-full z-30 py-4 px-6">
+        <div className="container mx-auto flex justify-between items-center">
+          <a href="index.html" className="flex items-center space-x-3">
+            <img src="logo.svg" alt="wedo-software.com logo" className="h-9 w-9" />
+            <span className="text-xl font-bold text-white tracking-tight">wedo-software<span className="text-cyan-400">.com</span></span>
+          </a>
+          <div className="space-x-8 text-gray-300">
+            <a href="index.html#expertise" className="hover:text-cyan-400 transition">Expertise</a>
+            <a href="index.html#tech-stack" className="hover:text-cyan-400 transition">Tech Stack</a>
+            <a href="index.html#projects" className="hover:text-cyan-400 transition">Projects</a>
+            <a href="index.html#contact" className="hover:text-cyan-400 transition">Contact</a>
+          </div>
+        </div>
+      </nav>
+    );
+
+    const ImpressumContent = () => (
+      <section className="pt-32 pb-20 min-h-screen">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center animate-fade-in">
+            Legal Notice
+          </h1>
+
+          <div className="glass-card p-8 rounded-2xl animate-slide-up space-y-8">
+            {/* Service Provider */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+                Service Provider / Media Owner / Publisher
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                Benjamin Flatz<br />
+                Eisengasse 25<br />
+                6850 Dornbirn, Austria
+              </p>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+                Contact
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                <strong>Phone:</strong> +43 664 4040185<br />
+                <strong>Contact form:</strong> <a href="index.html#contact" className="text-cyan-400 hover:text-cyan-300 transition">Go to form</a>
+              </p>
+            </div>
+
+            {/* Activity */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+                Activity
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                Software engineering and system architecture services provided as a self-employed professional (Neuer Selbständiger), including full-stack development, automation and technical project leadership.
+              </p>
+            </div>
+
+            {/* Taxes */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+                Taxes
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                Small business regulation pursuant to § 6 para. 1 no. 27 of the Austrian VAT Act (UStG) &mdash; no VAT is shown, no VAT identification number.
+              </p>
+            </div>
+
+            {/* Scope of Business */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+                Scope of Business (Media Act)
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                Software engineering, system architecture, automation and technical consulting services.
+              </p>
+            </div>
+
+            {/* Dispute Resolution */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+                Dispute Resolution
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                The EU Online Dispute Resolution (ODR) platform:
+                <a href="https://ec.europa.eu/odr" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition ml-1">
+                  https://ec.europa.eu/odr
+                </a>
+                <br />
+                We are not obliged and not willing to participate in dispute resolution proceedings before a consumer arbitration board.
+              </p>
+            </div>
+
+            {/* Disclaimer */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+                Disclaimer
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                No liability is assumed for external links. All content is protected by copyright &mdash; reproduction only with prior consent.
+              </p>
+            </div>
+          </div>
+
+          {/* Back to Home Button */}
+          <div className="text-center mt-12">
+            <a
+              href="index.html"
+              className="inline-block cta-primary text-[#05060a] px-8 py-3 rounded-full font-semibold transition"
+            >
+              Back to Home
+            </a>
+          </div>
+        </div>
+      </section>
+    );
+
+    const App = () => (
+      <div>
+        <Navbar />
+        <ImpressumContent />
+        <Footer />
+      </div>
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
