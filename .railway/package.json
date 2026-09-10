@@ -1,0 +1,16 @@
+{
+  "name": "wedo-software-railway-iac",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Infrastructure as Code definitions for Railway, per .roo/rules/5_deploy.md",
+  "scripts": {
+    "plan": "railway iac plan railway.ts",
+    "apply": "railway iac apply railway.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "railway": "latest",
+    "typescript": "^5.5.4"
+  }
+}

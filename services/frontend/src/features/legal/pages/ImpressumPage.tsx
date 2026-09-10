@@ -1,43 +1,17 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum - WeDo Software</title>
-  <script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.25.6/babel.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
-  <script type="text/babel" src="footer.js"></script>
-</head>
-<body class="bg-gray-50">
-  <div id="root"></div>
-  <script type="text/babel">
-    const Navbar = () => (
-      <nav className="bg-white shadow-lg py-4 px-6 fixed w-full z-20">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2">  {/* Added wrapper for logo and text */}
-            <img src="icon.png" alt="WeDo Software Logo" className="h-8 w-8" />  {/* Added logo image */}
-            <h1 className="text-2xl font-bold text-gray-800">WeDo Software</h1>
-          </div>
-          <div className="space-x-8 text-gray-600">
-            <a href="#topics" className="hover:text-blue-500 transition">Themen</a>
-            <a href="#about" className="hover:text-blue-500 transition">Über uns</a>
-            <a href="#contact" className="hover:text-blue-500 transition">Kontakt</a>
-            <a href="impressum.html" className="hover:text-blue-500 transition">Impressum</a>
-          </div>
-        </div>
-      </nav>
-    );
+import { Link } from 'react-router-dom';
+import Navbar from '../../../shared/components/Navbar';
+import Footer from '../../../shared/components/Footer';
 
-    const ImpressumContent = () => (
+export default function ImpressumPage() {
+  return (
+    <div>
+      <Navbar />
       <section className="pt-28 pb-20 bg-white min-h-screen">
         <div className="container mx-auto px-6 max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-12 text-center animate-fade-in">
             Impressum
           </h1>
-          
+
           <div className="bg-white p-8 rounded-xl shadow-custom animate-slide-up space-y-8">
             {/* Diensteanbieter */}
             <div>
@@ -58,7 +32,8 @@
               </h2>
               <p className="text-gray-700 leading-relaxed">
                 <strong>Telefon:</strong> +43 664 4040185<br />
-                <strong>Kontaktformular:</strong> <a href="index.html#contact" className="text-blue-600 hover:text-blue-700 transition">Zum Formular</a>
+                <strong>Kontaktformular:</strong>{' '}
+                <a href="/#contact" className="text-blue-600 hover:text-blue-700 transition">Zum Formular</a>
               </p>
             </div>
 
@@ -68,7 +43,8 @@
                 Tätigkeit
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Nebenberufliche lehrende Tätigkeit als Neuer Selbständiger: Erstellung und Vermittlung von Tutorials, Videos und Inhalten zu Software-Themen.
+                Nebenberufliche lehrende Tätigkeit als Neuer Selbständiger: Erstellung und Vermittlung von
+                Tutorials, Videos und Inhalten zu Software-Themen.
               </p>
             </div>
 
@@ -78,7 +54,8 @@
                 Steuern
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Kleinunternehmerregelung gem. § 6 Abs. 1 Z 27 UStG – keine Umsatzsteuer ausgewiesen, keine UID-Nummer.
+                Kleinunternehmerregelung gem. § 6 Abs. 1 Z 27 UStG – keine Umsatzsteuer ausgewiesen, keine
+                UID-Nummer.
               </p>
             </div>
 
@@ -98,8 +75,13 @@
                 Streitbeilegung
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Die EU-Plattform zur Online-Streitbeilegung (OS-Plattform): 
-                <a href="https://ec.europa.eu/odr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 transition ml-1">
+                Die EU-Plattform zur Online-Streitbeilegung (OS-Plattform):{' '}
+                <a
+                  href="https://ec.europa.eu/odr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 transition"
+                >
                   https://ec.europa.eu/odr
                 </a>
                 <br />
@@ -113,34 +95,24 @@
                 Haftungsausschluss
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Keine Haftung für externe Links. Alle Inhalte urheberrechtlich geschützt – Vervielfältigung nur mit Zustimmung.
+                Keine Haftung für externe Links. Alle Inhalte urheberrechtlich geschützt – Vervielfältigung nur
+                mit Zustimmung.
               </p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <div className="text-center mt-12">
-            <a 
-              href="index.html" 
+            <Link
+              to="/"
               className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-indigo-700 transition duration-300 shadow-lg"
             >
               Zurück zur Startseite
-            </a>
+            </Link>
           </div>
         </div>
       </section>
-    );
-
-    const App = () => (
-      <div>
-        <Navbar />
-        <ImpressumContent />
-        <Footer />
-      </div>
-    );
-
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-  </script>
-</body>
-</html>
+      <Footer />
+    </div>
+  );
+}

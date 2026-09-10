@@ -1,1 +1,13 @@
-services/frontend/node_modules
+# Node / frontend
+node_modules/
+dist/
+*.log
+*.tsbuildinfo
+services/frontend/vite.config.js
+services/frontend/vite.config.d.ts
+
+# Editors / OS
+.DS_Store
+
+# Environment
+.env
