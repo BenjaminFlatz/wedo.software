@@ -74,52 +74,17 @@
               </p>
 
               <h3 className="text-xl font-semibold text-white mt-6 mb-3">
-                2.2 Contact Form
+                2.2 Contact
               </h3>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                When you use our contact form, the following data is collected:
-              </p>
-              <ul className="list-disc list-inside text-gray-300 leading-relaxed mb-4 ml-4">
-                <li>Name</li>
-                <li>Email address</li>
-                <li>Message content</li>
-              </ul>
               <p className="text-gray-300 leading-relaxed">
-                Data processing is based on your consent (Art. 6(1)(a) GDPR). The data is used exclusively to process your inquiry and is deleted afterwards, unless statutory retention obligations apply.
-              </p>
-            </div>
-
-            {/* Formspree */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                3. Formspree
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Our contact form uses the Formspree service (Formspree Inc., USA) to process form submissions. When you submit the form, your entered data is transmitted to Formspree and forwarded from there to our email address.
-              </p>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Formspree processes the following data:
-              </p>
-              <ul className="list-disc list-inside text-gray-300 leading-relaxed mb-4 ml-4">
-                <li>Form data you entered (name, email, message)</li>
-                <li>IP address</li>
-                <li>Timestamp of submission</li>
-              </ul>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                The legal basis for using Formspree is your consent (Art. 6(1)(a) GDPR), which you grant by submitting the form.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                For more information, see Formspree's privacy policy:
-                <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition ml-1">
-                  https://formspree.io/legal/privacy-policy/
-                </a>
+                When you contact us directly by email or phone, we only process the personal data you voluntarily provide (e.g. name, email address, phone number, message content) in order to handle your inquiry. Data processing is based on your consent (Art. 6(1)(a) GDPR). The data is used exclusively to process your inquiry and is deleted afterwards, unless statutory retention obligations apply.
               </p>
             </div>
 
             {/* Cookies */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                4. Cookies
+                3. Cookies
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 Our website currently does not use cookies. Should this change, we will inform you accordingly at this point.
@@ -129,11 +94,11 @@
             {/* External Services */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                5. Integration of External Services
+                4. Integration of External Services
               </h2>
 
               <h3 className="text-xl font-semibold text-white mt-6 mb-3">
-                5.1 Content Delivery Networks (CDN)
+                4.1 Content Delivery Networks (CDN)
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 This website uses the following CDN services to quickly load libraries:
@@ -151,7 +116,7 @@
             {/* Your Rights */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                6. Your Rights
+                5. Your Rights
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 You have the following rights regarding your personal data:
@@ -176,7 +141,7 @@
             {/* Right to Complain */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                7. Right to Lodge a Complaint
+                6. Right to Lodge a Complaint
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 You have the right to lodge a complaint with a data protection supervisory authority. In Austria, this is the Austrian Data Protection Authority:
@@ -193,7 +158,7 @@
             {/* Data Security */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                8. Data Security
+                7. Data Security
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 We employ technical and organizational security measures to protect your data against accidental or intentional manipulation, loss, destruction or access by unauthorized persons. Our security measures are continuously improved in line with technological developments.
@@ -203,7 +168,7 @@
             {/* Storage Duration */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                9. Storage Duration
+                8. Storage Duration
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 We store personal data only as long as necessary for the respective purpose or as required by statutory retention periods. Once the purpose no longer applies or retention periods expire, the data is routinely deleted.
@@ -213,7 +178,7 @@
             {/* Changes */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                10. Changes to this Privacy Policy
+                9. Changes to this Privacy Policy
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 We reserve the right to adapt this privacy policy to reflect changes in the law or changes to our services. The most current version applies to repeat visits.
