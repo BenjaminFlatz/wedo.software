@@ -402,28 +402,19 @@
       </section>
     );
 
-    const Contact = () => {
-      const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+    const CONTACT_EMAIL = 'info@wedo-software.com';
+    const CONTACT_PHONE = '+43 664 4040185';
 
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        setStatus('submitting');
-        const form = event.target;
-        const data = new FormData(form);
+    const Contact = () => {
+      const [copied, setCopied] = useState(false);
+
+      const handleCopyEmail = async () => {
         try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: { Accept: 'application/json' },
-          });
-          if (response.ok) {
-            setStatus('success');
-            form.reset();
-          } else {
-            setStatus('error');
-          }
+          await navigator.clipboard.writeText(CONTACT_EMAIL);
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
         } catch (err) {
-          setStatus('error');
+          // Clipboard API unavailable (e.g. insecure context) — ignore, the mailto link still works.
         }
       };
 
@@ -433,56 +424,36 @@
             <p className="text-center text-cyan-400 uppercase tracking-[0.3em] text-sm font-semibold mb-3">Contact</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-center text-white mb-6">Let's Build Something Reliable</h2>
             <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-              Have a project in mind or need help architecting your next system? Tell me about it below.
+              Have a project in mind or need help architecting your next system? Reach out directly &mdash; no forms, no middlemen.
             </p>
-            <div className="max-w-lg mx-auto glass-card p-8 rounded-2xl">
-              {status === 'success' ? (
-                <div className="text-center py-8">
-                  <div className="text-5xl mb-4">✅</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Message sent!</h3>
-                  <p className="text-gray-400">Thanks for reaching out &mdash; I'll get back to you as soon as possible.</p>
-                  <button
-                    onClick={() => setStatus('idle')}
-                    className="mt-6 cta-primary text-[#05060a] font-semibold px-6 py-2.5 rounded-full transition"
-                  >
-                    Send another message
-                  </button>
+            <div className="max-w-lg mx-auto glass-card p-8 rounded-2xl space-y-6">
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Project Inquiry from wedo-software.com')}`}
+                className="flex items-center justify-between gap-4 p-4 rounded-lg bg-black/30 border border-gray-700 hover:border-cyan-400 transition group"
+              >
+                <div>
+                  <p className="text-sm text-gray-400">Email</p>
+                  <p className="text-white font-semibold group-hover:text-cyan-400 transition">{CONTACT_EMAIL}</p>
                 </div>
-              ) : (
-                <form action="https://formspree.io/f/xpwykbke" method="POST" onSubmit={handleSubmit} className="space-y-6">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Full Name"
-                    required
-                    className="w-full p-4 rounded-lg bg-black/30 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Work Email"
-                    required
-                    className="w-full p-4 rounded-lg bg-black/30 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="Project Scope / Message"
-                    required
-                    rows="5"
-                    className="w-full p-4 rounded-lg bg-black/30 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
-                  ></textarea>
-                  <button
-                    type="submit"
-                    disabled={status === 'submitting'}
-                    className="w-full cta-primary text-[#05060a] p-4 rounded-lg font-semibold transition disabled:opacity-60"
-                  >
-                    {status === 'submitting' ? 'Sending…' : 'Send Message'}
-                  </button>
-                  {status === 'error' && (
-                    <p className="text-red-400 text-sm text-center">Something went wrong. Please try again or email me directly.</p>
-                  )}
-                </form>
-              )}
+                <span className="text-cyan-400">&rarr;</span>
+              </a>
+              <a
+                href={`tel:${CONTACT_PHONE.replace(/\s+/g, '')}`}
+                className="flex items-center justify-between gap-4 p-4 rounded-lg bg-black/30 border border-gray-700 hover:border-cyan-400 transition group"
+              >
+                <div>
+                  <p className="text-sm text-gray-400">Phone</p>
+                  <p className="text-white font-semibold group-hover:text-cyan-400 transition">{CONTACT_PHONE}</p>
+                </div>
+                <span className="text-cyan-400">&rarr;</span>
+              </a>
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="w-full cta-primary text-[#05060a] p-4 rounded-lg font-semibold transition"
+              >
+                {copied ? 'Email copied!' : 'Copy Email Address'}
+              </button>
             </div>
           </div>
         </section>

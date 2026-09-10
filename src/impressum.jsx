@@ -42,7 +42,7 @@
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 <strong>Phone:</strong> +43 664 4040185<br />
-                <strong>Contact form:</strong> <a href="index.html#contact" className="text-cyan-400 hover:text-cyan-300 transition">Go to form</a>
+                <strong>Email:</strong> <a href="mailto:info@wedo-software.com" className="text-cyan-400 hover:text-cyan-300 transition">info@wedo-software.com</a>
               </p>
             </div>
 
