@@ -29,6 +29,7 @@ const COLOR_SCHEME: 'dark' = 'dark';
 export function useChatwoot(): void {
   useEffect(() => {
     if (document.getElementById(SCRIPT_ID)) return; // never inject twice
+    if (!CHATWOOT_BASE_URL || !CHATWOOT_WEBSITE_TOKEN) return; // env vars not configured
 
     window.chatwootSettings = {
       position: 'right',
