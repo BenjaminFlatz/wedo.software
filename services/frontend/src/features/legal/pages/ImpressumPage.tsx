@@ -6,16 +6,16 @@ export default function ImpressumPage() {
   return (
     <div>
       <Navbar />
-      <section className="pt-28 pb-20 bg-white min-h-screen">
+      <section className="pt-32 pb-24 bg-[#05060a] min-h-screen">
         <div className="container mx-auto px-6 max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center animate-fade-in">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center animate-fade-in glow-text">
             Legal Notice
           </h1>
 
-          <div className="bg-white p-8 rounded-xl shadow-custom animate-slide-up space-y-8">
-            {/* Diensteanbieter */}
+          <div className="glass-panel p-8 rounded-2xl animate-slide-up space-y-8">
+            {/* Service Provider */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">
                 Service Provider / Media Owner / Publisher
               </h2>
               <p className="text-gray-300 leading-relaxed">
@@ -27,87 +27,87 @@ export default function ImpressumPage() {
 
             {/* Contact */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">
                 Contact
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                <strong>Telefon:</strong> +43 664 4040185<br />
-                <strong>Kontaktformular:</strong>{' '}
-                <a href="/#contact" className="text-blue-600 hover:text-blue-700 transition">Zum Formular</a>
+              <p className="text-gray-300 leading-relaxed">
+                <strong>Phone:</strong> +43 664 4040185<br />
+                <strong>Contact:</strong>{' '}
+                <a href="/#contact" className="text-cyan-400 hover:text-cyan-300 transition">Start a chat</a>
               </p>
             </div>
 
             {/* Activity */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">
                 Activity
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                Nebenberufliche lehrende Tätigkeit als Neuer Selbständiger: Erstellung und Vermittlung von
-                Tutorials, Videos und Inhalten zu Software-Themen.
+              <p className="text-gray-300 leading-relaxed">
+                Software engineering, system architecture, AI automation, web scraping and
+                technical consulting services, registered as a sole proprietor (Neuer
+                Selbständiger) in Austria.
               </p>
             </div>
 
             {/* Taxes */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">
                 Taxes
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                Kleinunternehmerregelung gem. § 6 Abs. 1 Z 27 UStG – keine Umsatzsteuer ausgewiesen, keine
-                UID-Nummer.
+              <p className="text-gray-300 leading-relaxed">
+                Small business regulation pursuant to § 6 para. 1 no. 27 of the Austrian VAT Act
+                (UStG) — no VAT is charged, no VAT identification number.
               </p>
             </div>
 
             {/* Scope of Business */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">
                 Scope of Business (Media Act)
               </h2>
               <p className="text-gray-300 leading-relaxed">
-                Software engineering, system architecture, automation and technical consulting services.
+                Software engineering, system architecture, automation and technical consulting
+                services.
               </p>
             </div>
 
             {/* Dispute Resolution */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">
                 Dispute Resolution
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                Die EU-Plattform zur Online-Streitbeilegung (OS-Plattform):{' '}
+              <p className="text-gray-300 leading-relaxed">
+                The EU Online Dispute Resolution platform (ODR platform) can be found at:{' '}
                 <a
                   href="https://ec.europa.eu/odr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 transition"
+                  className="text-cyan-400 hover:text-cyan-300 transition"
                 >
                   https://ec.europa.eu/odr
                 </a>
                 <br />
-                We are not obliged and not willing to participate in dispute resolution proceedings before a consumer arbitration board.
+                We are not obliged and not willing to participate in dispute resolution
+                proceedings before a consumer arbitration board.
               </p>
             </div>
 
             {/* Disclaimer */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4 border-b border-cyan-500/30 pb-2">
                 Disclaimer
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                Keine Haftung für externe Links. Alle Inhalte urheberrechtlich geschützt – Vervielfältigung nur
-                mit Zustimmung.
+              <p className="text-gray-300 leading-relaxed">
+                No liability is assumed for the content of external links. All content is
+                protected by copyright — reproduction only with prior consent.
               </p>
             </div>
           </div>
 
           {/* Back to Home Button */}
           <div className="text-center mt-12">
-            <Link
-              to="/"
-              className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-indigo-700 transition duration-300 shadow-lg"
-            >
-              Zurück zur Startseite
+            <Link to="/" className="cta-primary inline-block px-8 py-3 rounded-full">
+              Back to Home
             </Link>
           </div>
         </div>

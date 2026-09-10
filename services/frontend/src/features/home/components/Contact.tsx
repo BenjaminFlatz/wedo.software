@@ -2,27 +2,25 @@ import { openChatwoot } from '../../../shared/hooks/useChatwoot';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-gray-100">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-12 animate-fade-in">
-          Haben Sie Fragen?
+    <section id="contact" className="section-glow py-24 bg-[#05060a]">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <span className="badge-chip mb-6 inline-block">Let's Build Something</span>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 animate-fade-in">
+          Have a project in mind?
         </h2>
-        <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-          Möchten Sie mehr über unsere Lerninhalte erfahren oder haben Sie Themenvorschläge? Starten Sie einfach
-          einen Chat mit uns – wir antworten direkt.
+        <p className="text-gray-400 mb-10 max-w-xl mx-auto">
+          Whether you need AI automation, a custom scraping pipeline, a full-stack application or
+          cloud infrastructure — start a conversation and get a straight answer, no forms to fill
+          out.
         </p>
-        <div className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg animate-slide-up text-center">
-          <div className="text-blue-600 text-5xl mb-4">💬</div>
-          <p className="text-gray-700 mb-6">
-            Klicken Sie auf den Button oder auf die Chat-Sprechblase unten rechts, um direkt mit uns zu
-            schreiben.
+        <div className="glass-card rounded-2xl p-10 animate-slide-up">
+          <div className="text-cyan-400 text-5xl mb-4">💬</div>
+          <p className="text-gray-300 mb-8">
+            Click the button below or the chat bubble in the bottom-right corner to start chatting
+            with me directly.
           </p>
-          <button
-            type="button"
-            onClick={openChatwoot}
-            className="w-full bg-blue-600 text-white p-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
-          >
-            Chat starten
+          <button type="button" onClick={openChatwoot} className="cta-primary w-full p-4 rounded-lg">
+            Start a Chat
           </button>
         </div>
       </div>

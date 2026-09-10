@@ -44,6 +44,8 @@ pattern used).
   cloud architecture & DevOps.
 - **Tech Stack** — the technologies and professional background behind the
   work.
+- **How It Works** — the four-step client onboarding journey: Discovery Chat
+  → Proposal → Build & Iterate → Launch & Support.
 - **Contact** — a single call-to-action that opens the Chatwoot live chat.
   No contact form, no backend, no submitted data at rest.
 
