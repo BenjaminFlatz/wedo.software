@@ -46,8 +46,8 @@ export default defineProject(({ service }) => {
       // The Chatwoot website token is not a secret — it ships in the
       // client bundle regardless of where it is set — so it is safe to
       // declare as a plain literal rather than preserve().
-      VITE_CHATWOOT_BASE_URL: 'https://chatwoot.wedo-software.com',
-      VITE_CHATWOOT_WEBSITE_TOKEN: 'JnugYLngRwnCRdc3oW2G76t2',
+      VITE_CHATWOOT_BASE_URL: '',
+      VITE_CHATWOOT_WEBSITE_TOKEN: '',
     },
     // Custom domain only attached in production; staging uses Railway's
     // generated domain.
