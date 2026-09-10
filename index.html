@@ -19,6 +19,22 @@
 <body class="bg-[#05060a]">
   <div id="root"></div>
   <script src="dist/app.js"></script>
+  <script>
+    window.chatwootSettings = { "position": "right", "type": "standard", "launcherTitle": "" };
+    (function (d, t) {
+      var BASE_URL = "https://chatwoot.wedo-software.com";
+      var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      g.src = BASE_URL + "/packs/js/sdk.js";
+      g.async = true;
+      s.parentNode.insertBefore(g, s);
+      g.onload = function () {
+        window.chatwootSDK.run({
+          websiteToken: 'JnugYLngRwnCRdc3oW2G76t2',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document, "script");
+  </script>
 </body>
 
 </html>

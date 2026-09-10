@@ -74,45 +74,40 @@
               </p>
 
               <h3 className="text-xl font-semibold text-white mt-6 mb-3">
-                2.2 Contact Form
+                2.2 Live Chat
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                When you use our contact form, the following data is collected:
+                When you use our live chat, the following data is collected:
               </p>
               <ul className="list-disc list-inside text-gray-300 leading-relaxed mb-4 ml-4">
-                <li>Name</li>
-                <li>Email address</li>
+                <li>Name (if provided)</li>
+                <li>Email address (if provided)</li>
                 <li>Message content</li>
+                <li>IP address</li>
               </ul>
               <p className="text-gray-300 leading-relaxed">
                 Data processing is based on your consent (Art. 6(1)(a) GDPR). The data is used exclusively to process your inquiry and is deleted afterwards, unless statutory retention obligations apply.
               </p>
             </div>
 
-            {/* Formspree */}
+            {/* Chatwoot */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
-                3. Formspree
+                3. Chatwoot
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Our contact form uses the Formspree service (Formspree Inc., USA) to process form submissions. When you submit the form, your entered data is transmitted to Formspree and forwarded from there to our email address.
+                Our live chat widget is powered by Chatwoot, hosted on our own infrastructure (chatwoot.wedo-software.com). When you use the live chat, your entered data is transmitted to and stored on this self-hosted instance.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Formspree processes the following data:
+                Chatwoot processes the following data:
               </p>
               <ul className="list-disc list-inside text-gray-300 leading-relaxed mb-4 ml-4">
-                <li>Form data you entered (name, email, message)</li>
+                <li>Chat data you entered (name, email, message)</li>
                 <li>IP address</li>
-                <li>Timestamp of submission</li>
+                <li>Timestamp of conversation</li>
               </ul>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                The legal basis for using Formspree is your consent (Art. 6(1)(a) GDPR), which you grant by submitting the form.
-              </p>
               <p className="text-gray-300 leading-relaxed">
-                For more information, see Formspree's privacy policy:
-                <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition ml-1">
-                  https://formspree.io/legal/privacy-policy/
-                </a>
+                The legal basis for using Chatwoot is your consent (Art. 6(1)(a) GDPR), which you grant by starting a chat.
               </p>
             </div>
 

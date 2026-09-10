@@ -402,87 +402,33 @@
       </section>
     );
 
+    const openChatwoot = () => {
+      if (typeof window !== 'undefined' && window.$chatwoot) {
+        window.$chatwoot.toggle('open');
+      }
+    };
+
     const Contact = () => {
-      const [status, setStatus] = useState('idle'); // idle | submitting | success | error
-
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        setStatus('submitting');
-        const form = event.target;
-        const data = new FormData(form);
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: { Accept: 'application/json' },
-          });
-          if (response.ok) {
-            setStatus('success');
-            form.reset();
-          } else {
-            setStatus('error');
-          }
-        } catch (err) {
-          setStatus('error');
-        }
-      };
-
       return (
         <section id="contact" className="py-24">
           <div className="container mx-auto px-6">
             <p className="text-center text-cyan-400 uppercase tracking-[0.3em] text-sm font-semibold mb-3">Contact</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-center text-white mb-6">Let's Build Something Reliable</h2>
             <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-              Have a project in mind or need help architecting your next system? Tell me about it below.
+              Have a project in mind or need help architecting your next system? Start a conversation and I'll get back to you as soon as possible.
             </p>
-            <div className="max-w-lg mx-auto glass-card p-8 rounded-2xl">
-              {status === 'success' ? (
-                <div className="text-center py-8">
-                  <div className="text-5xl mb-4">✅</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Message sent!</h3>
-                  <p className="text-gray-400">Thanks for reaching out &mdash; I'll get back to you as soon as possible.</p>
-                  <button
-                    onClick={() => setStatus('idle')}
-                    className="mt-6 cta-primary text-[#05060a] font-semibold px-6 py-2.5 rounded-full transition"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-                <form action="https://formspree.io/f/xpwykbke" method="POST" onSubmit={handleSubmit} className="space-y-6">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Full Name"
-                    required
-                    className="w-full p-4 rounded-lg bg-black/30 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Work Email"
-                    required
-                    className="w-full p-4 rounded-lg bg-black/30 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="Project Scope / Message"
-                    required
-                    rows="5"
-                    className="w-full p-4 rounded-lg bg-black/30 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
-                  ></textarea>
-                  <button
-                    type="submit"
-                    disabled={status === 'submitting'}
-                    className="w-full cta-primary text-[#05060a] p-4 rounded-lg font-semibold transition disabled:opacity-60"
-                  >
-                    {status === 'submitting' ? 'Sending…' : 'Send Message'}
-                  </button>
-                  {status === 'error' && (
-                    <p className="text-red-400 text-sm text-center">Something went wrong. Please try again or email me directly.</p>
-                  )}
-                </form>
-              )}
+            <div className="max-w-lg mx-auto glass-card p-8 rounded-2xl text-center space-y-6">
+              <p className="text-gray-300">
+                Use the live chat to reach out directly, or email me at{' '}
+                <a href="mailto:info@wedo-software.com" className="text-cyan-400 hover:text-cyan-300 transition">info@wedo-software.com</a>.
+              </p>
+              <button
+                type="button"
+                onClick={openChatwoot}
+                className="w-full cta-primary text-[#05060a] p-4 rounded-lg font-semibold transition"
+              >
+                Start a Chat
+              </button>
             </div>
           </div>
         </section>
