@@ -6,6 +6,7 @@ declare global {
       position?: 'left' | 'right';
       type?: 'standard' | 'expanded_bubble';
       launcherTitle?: string;
+      darkMode?: 'light' | 'dark' | 'auto';
     };
     chatwootSDK?: {
       run: (config: { websiteToken: string; baseUrl: string }) => void;
@@ -17,15 +18,24 @@ declare global {
   }
 }
 
-const CHATWOOT_BASE_URL = import.meta.env.VITE_CHATWOOT_BASE_URL || 'https://chatwoot.wedo-software.com';
-const CHATWOOT_WEBSITE_TOKEN = import.meta.env.VITE_CHATWOOT_WEBSITE_TOKEN || 'JnugYLngRwnCRdc3oW2G76t2';
+const CHATWOOT_BASE_URL = import.meta.env.VITE_CHATWOOT_BASE_URL;
+const CHATWOOT_WEBSITE_TOKEN = import.meta.env.VITE_CHATWOOT_WEBSITE_TOKEN;
 const SCRIPT_ID = 'chatwoot-sdk';
+
+// The whole site is a fixed dark glassmorphic theme (no light mode / theme
+// toggle), so the widget is always synced to Chatwoot's own dark skin.
+const COLOR_SCHEME: 'dark' = 'dark';
 
 export function useChatwoot(): void {
   useEffect(() => {
     if (document.getElementById(SCRIPT_ID)) return; // never inject twice
 
-    window.chatwootSettings = { position: 'right', type: 'standard', launcherTitle: '' };
+    window.chatwootSettings = {
+      position: 'right',
+      type: 'standard',
+      launcherTitle: '',
+      darkMode: COLOR_SCHEME,
+    };
 
     const script = document.createElement('script');
     script.id = SCRIPT_ID;
@@ -33,6 +43,9 @@ export function useChatwoot(): void {
     script.async = true;
     script.onload = () => {
       window.chatwootSDK?.run({ websiteToken: CHATWOOT_WEBSITE_TOKEN, baseUrl: CHATWOOT_BASE_URL });
+      // Re-assert the color scheme once the widget has fully initialized —
+      // covers the case where the iframe finishes booting after `run()`.
+      window.$chatwoot?.setColorScheme?.(COLOR_SCHEME);
     };
     document.body.appendChild(script);
   }, []);
